@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Router</string>
+    <string name="scheme">https</string>
+    <string name="host">route.greendot.com</string>
+</resources>

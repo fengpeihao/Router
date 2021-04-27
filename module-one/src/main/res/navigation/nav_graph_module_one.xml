@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_module_one"
+    app:startDestination="@id/moduleOneNavigatorFragment">
+    <fragment
+        android:id="@+id/moduleOneNavigatorFragment"
+        android:name="com.cfxc.module_one.ModuleOneNavigatorFragment" />
+    <fragment
+        android:id="@+id/moduleOneFirstFragment"
+        android:name="com.cfxc.module_one.ModuleOneFirstFragment" />
+    <fragment
+        android:id="@+id/moduleOneSecondFragment"
+        android:name="com.cfxc.module_one.ModuleOneSecondFragment" />
+</navigation>

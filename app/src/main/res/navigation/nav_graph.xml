@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainModuleHomeFragment">
+
+    <include app:graph="@navigation/nav_graph_module_one" />
+    <include app:graph="@navigation/nav_graph_module_two" />
+
+    <fragment
+        android:id="@+id/mainModuleHomeFragment"
+        android:name="com.cfxc.router.MainModuleHomeFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainModuleFirstFragment"
+        android:name="com.cfxc.router.MainModuleFirstFragment" />
+
+    <fragment android:id="@+id/mainModuleSecondFragment"
+        android:name="com.cfxc.router.MainModuleSecondFragment"/>
+
+    <fragment android:id="@+id/mainModuleThirdFragment"
+        android:name="com.cfxc.router.MainModuleThirdFragment"/>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cfxc.router.LoginFragment" />
+
+    <fragment
+        android:id="@+id/prerequisiteFragment"
+        android:name="com.cfxc.router.PrerequisiteFragment" />
+</navigation>
