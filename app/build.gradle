@@ -1,20 +1,20 @@
 plugins {
-    id 'com.android.library'
+    id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+    buildToolsVersion BUILDTOOLS_VERSION
 
     defaultConfig {
-//        applicationId "com.cfxc.router"
-        minSdkVersion 21
-        targetSdkVersion 30
+        applicationId "com.cfxc.router"
+        minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         javaCompileOptions {
             annotationProcessorOptions {

@@ -20,13 +20,6 @@
         <module name="Router.router-compiler" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7">
-      <module name="Router.app" target="1.8" />
-      <module name="Router.common" target="1.8" />
-      <module name="Router.module-one" target="1.8" />
-      <module name="Router.module-two" target="1.8" />
-      <module name="Router.router-compiler" target="1.8" />
-      <module name="Router.router-core" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>

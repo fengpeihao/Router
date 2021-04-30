@@ -1,5 +1,11 @@
-plugins {
-    id 'java-library'
+apply plugin: 'java'
+
+ext {
+    bintrayName = 'router-compiler'
+    artifact = bintrayName
+    libraryName = 'Router compiler'
+    libraryDescription = 'A compiler for Router to find route'
+    libraryVersion = router_version
 }
 
 java {
@@ -15,5 +21,7 @@ dependencies {
     implementation project(':router-annotation')
 
     implementation 'com.squareup:javapoet:1.13.0'
-
 }
+
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'

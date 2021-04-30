@@ -1,8 +1,18 @@
-plugins {
-    id 'java-library'
+apply plugin: 'java'
+
+ext {
+    bintrayName = 'router-annotation'
+    artifact = bintrayName
+    libraryName = 'Router annotation'
+    libraryDescription = 'The annotation used in arouter core'
+    libraryVersion = router_version
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
+
+
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'
