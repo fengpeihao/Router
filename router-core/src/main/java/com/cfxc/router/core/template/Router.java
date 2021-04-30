@@ -168,7 +168,7 @@ public class Router {
             navOptions.setPopUpTo(getDestinationId(popUpToDestination), inclusive);
         navOptions.setEnterAnim(R.anim.slide_in).setExitAnim(R.anim.slide_out);
         if (bundle == null) bundle = new Bundle();
-        if (Constants.MAIN_MODULE_ROUTER_GRAPH_NAME.equals(graphText) || navController.getGraph().getId() == getDestinationId(graphText)) {
+        if (navController.getGraph().getId() == getDestinationId(graphText)) {
             navController.navigate(destinationId, bundle, navOptions.build());
         } else {
             bundle.putInt(KEY_DESTINATION_ID, destinationId);

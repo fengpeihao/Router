@@ -19,7 +19,7 @@ public class Warehouse {
     // Cache route and metas
     public static Map<String, RouteMeta> routes = new HashMap<>();
     public static Map<String, Integer> destinationMap = new HashMap<>();
-    public static Map<Class, IProvider> providerMap = new HashMap<>();
+    public static Map<Class<?>, IProvider> providerMap = new HashMap<>();
 
     // Cache interceptor
     public static Map<Integer, Class<? extends IInterceptor>> interceptorsIndex = new UniqueKeyTreeMap<>("More than one interceptors use same priority [%s]");
