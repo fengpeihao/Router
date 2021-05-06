@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 ext {
     bintrayName = 'router-compiler'
@@ -21,6 +22,19 @@ dependencies {
     implementation project(':router-annotation')
 
     implementation 'com.squareup:javapoet:1.13.0'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                groupId = publishedGroupId
+                artifactId = 'router-compiler'
+                version = router_version
+            }
+        }
+    }
 }
 
 apply from: '../install.gradle'
