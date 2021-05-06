@@ -133,3 +133,27 @@ val userDataProvider = Router.getInstance().build(RouteConstant.USER_DATA_PROVID
                 .navigation() as IUserDataProvider
 Toast.makeText(requireContext(), userDataProvider.getUserName(), Toast.LENGTH_SHORT).show()
 ```
+#对了，从main Module跳转到其他module页面时要先跳转到对应的navigation graph，所以其他module的navigation graph的startDestination Fragment要做一个该module的跳转分发器
+```
+class ModuleOneNavigatorFragment : Fragment() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            //Constants.KEY_DESTINATION_ID 是Router内部定义的bundle Key，用来传递跳转的destinationId
+            //这里传递过来的就是在前面页面要跳转到的页面的destinationId
+            val destinationId = it.getInt(Constants.KEY_DESTINATION_ID, R.id.moduleOneFirstFragment)
+            findNavController().navigate(
+                destinationId, it,
+                NavOptions.Builder().setPopUpTo(R.id.moduleOneNavigatorFragment, true)
+                    .setEnterAnim(R.anim.slide_in).setExitAnim(R.anim.slide_out).build()
+            )
+        } ?: run {
+            findNavController().navigate(
+                R.id.moduleOneFirstFragment, null,
+                NavOptions.Builder().setPopUpTo(R.id.moduleOneNavigatorFragment, true)
+                    .setEnterAnim(R.anim.slide_in).setExitAnim(R.anim.slide_out).build()
+            )
+        }
+    }
+}
+```

@@ -1,1 +1,47 @@
-/build
+
+#java
+*.class
+
+#package file
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+#eclipse
+.settings/
+.project
+.classpatch
+
+#Intellij idea
+.idea/
+/idea/
+*.ipr
+*.iml
+*.iws
+/out/
+
+#temp file
+logs/
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+#maven
+target/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+#spring boot
+HELP.md
+.mvn/
+mvnw
+mvnw.cmd
+
+# system ignore
+.DS_Store
+Thumbs.db
