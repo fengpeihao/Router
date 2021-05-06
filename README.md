@@ -2,9 +2,9 @@
 #在项目的build.gradle文件添加 maven {url  "https://cfxc.bintray.com/maven"}
 ```
     repositories {
-        maven {url  "https://cfxc.bintray.com/maven"}
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 ```
 #在module的build.gradle文件添加依赖
@@ -25,8 +25,8 @@ android {
            }
     }
 dependencies {
-    kapt 'com.cfxc.router:router-compiler:1.0.0'
-    implementation 'com.cfxc.router:router-core:1.0.0'
+    kapt 'com.github.fengpeihao.router:router-compiler:1.0.1'
+    implementation 'com.github.fengpeihao.router:router-core:1.0.1'
 }
 ```
 #给所有在navigation表中的Fragment添加Route注解

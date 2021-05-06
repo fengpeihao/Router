@@ -43,6 +43,5 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.4"
 }
 
-apply from: '../publish.gradle'
-//apply from: '../install.gradle'
-//apply from: '../bintray.gradle'
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'
