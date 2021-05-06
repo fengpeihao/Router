@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
-ext {
-    bintrayName = 'router-core'
-    artifact = bintrayName
-    libraryName = 'Router sdk'
-    libraryDescription = 'A router for Android Jetpack Navigation'
-    libraryVersion = router_version
-}
+//ext {
+//    bintrayName = 'router-core'
+//    artifact = bintrayName
+//    libraryName = 'Router sdk'
+//    libraryDescription = 'A router for Android Jetpack Navigation'
+//    libraryVersion = router_version
+//}
 
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
@@ -57,5 +57,5 @@ afterEvaluate {
     }
 }
 
-apply from: '../install.gradle'
-apply from: '../bintray.gradle'
+//apply from: '../install.gradle'
+//apply from: '../bintray.gradle'

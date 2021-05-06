@@ -1,13 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
-ext {
-    bintrayName = 'router-compiler'
-    artifact = bintrayName
-    libraryName = 'Router compiler'
-    libraryDescription = 'A compiler for Router to find route'
-    libraryVersion = router_version
-}
+//ext {
+//    bintrayName = 'router-compiler'
+//    artifact = bintrayName
+//    libraryName = 'Router compiler'
+//    libraryDescription = 'A compiler for Router to find route'
+//    libraryVersion = router_version
+//}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -37,5 +37,5 @@ afterEvaluate {
     }
 }
 
-apply from: '../install.gradle'
-apply from: '../bintray.gradle'
+//apply from: '../install.gradle'
+//apply from: '../bintray.gradle'

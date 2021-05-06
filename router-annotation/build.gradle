@@ -1,13 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
-ext {
-    bintrayName = 'router-annotation'
-    artifact = bintrayName
-    libraryName = 'Router annotation'
-    libraryDescription = 'The annotation used in arouter core'
-    libraryVersion = router_version
-}
+//ext {
+//    bintrayName = 'router-annotation'
+//    artifact = bintrayName
+//    libraryName = 'Router annotation'
+//    libraryDescription = 'The annotation used in arouter core'
+//    libraryVersion = router_version
+//}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -28,5 +28,5 @@ afterEvaluate {
 }
 
 
-apply from: '../install.gradle'
-apply from: '../bintray.gradle'
+//apply from: '../install.gradle'
+//apply from: '../bintray.gradle'
