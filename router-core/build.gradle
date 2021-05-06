@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
 
-//ext {
-//    bintrayName = 'router-core'
-//    artifact = bintrayName
-//    libraryName = 'Router sdk'
-//    libraryDescription = 'A router for Android Jetpack Navigation'
-//    libraryVersion = router_version
-//}
+ext {
+    bintrayName = 'router-core'
+    artifact = bintrayName
+    libraryName = 'Router sdk'
+    libraryDescription = 'A router for Android Jetpack Navigation'
+    libraryVersion = router_version
+}
 
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
@@ -43,19 +42,6 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.4"
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.release
-                groupId = publishedGroupId
-                artifactId = 'router-core'
-                version = router_version
-            }
-        }
-    }
-}
-
+apply from: '../publish.gradle'
 //apply from: '../install.gradle'
 //apply from: '../bintray.gradle'

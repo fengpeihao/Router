@@ -1,32 +1,18 @@
 apply plugin: 'java'
-apply plugin: 'maven-publish'
 
-//ext {
-//    bintrayName = 'router-annotation'
-//    artifact = bintrayName
-//    libraryName = 'Router annotation'
-//    libraryDescription = 'The annotation used in arouter core'
-//    libraryVersion = router_version
-//}
+ext {
+    bintrayName = 'router-annotation'
+    artifact = bintrayName
+    libraryName = 'Router annotation'
+    libraryDescription = 'The annotation used in arouter core'
+    libraryVersion = router_version
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                groupId = publishedGroupId
-                artifactId = 'router-annotation'
-                version = router_version
-            }
-        }
-    }
-}
-
-
+apply from: '../publish.gradle'
 //apply from: '../install.gradle'
 //apply from: '../bintray.gradle'

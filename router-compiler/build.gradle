@@ -1,13 +1,12 @@
 apply plugin: 'java'
-apply plugin: 'maven-publish'
 
-//ext {
-//    bintrayName = 'router-compiler'
-//    artifact = bintrayName
-//    libraryName = 'Router compiler'
-//    libraryDescription = 'A compiler for Router to find route'
-//    libraryVersion = router_version
-//}
+ext {
+    bintrayName = 'router-compiler'
+    artifact = bintrayName
+    libraryName = 'Router compiler'
+    libraryDescription = 'A compiler for Router to find route'
+    libraryVersion = router_version
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -24,18 +23,6 @@ dependencies {
     implementation 'com.squareup:javapoet:1.13.0'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                groupId = publishedGroupId
-                artifactId = 'router-compiler'
-                version = router_version
-            }
-        }
-    }
-}
-
+apply from: '../publish.gradle'
 //apply from: '../install.gradle'
 //apply from: '../bintray.gradle'

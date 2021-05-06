@@ -1,0 +1,57 @@
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = libraryName
+                description = libraryDescription
+                url = siteUrl
+
+                licenses {
+                    license {
+                        name = licenseName
+                        url = licenseUrl
+                    }
+                }
+                developers {
+                    developer {
+                        id = developerId
+                        name = developerName
+                        email = developerEmail
+                    }
+                }
+                scm {
+                    connection = gitUrl
+                    developerConnection = gitUrl
+                    url = siteUrl
+                }
+            }
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            if (project.hasProperty("android")) {
+                release(MavenPublication) {
+                    from components.release
+                    groupId = publishedGroupId
+                    artifactId = bintrayName
+                    version = router_version
+                }
+            } else {
+                mavenJava(MavenPublication) {
+                    from components.java
+                    afterEvaluate {
+                        groupId = publishedGroupId
+                        artifactId = bintrayName
+                        version = router_version
+                    }
+                }
+            }
+        }
+    }
+}
